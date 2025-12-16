@@ -295,7 +295,10 @@ private _itemEquipment =
     "ItemMicroDAGR",
 	"ItemAndroid",
     "ItemAndroidMisc",
-    "ItemMicroDAGRMisc"
+    "ItemMicroDAGRMisc",
+
+	// Animate
+	"tsp_sling"
 ];
 
 private _itemHats = [
@@ -1672,9 +1675,13 @@ private _itemSniperAmmo = [
 private _itemWeaponGL =
 [
     //============================================================
-    //Rifles
+    //Primary Weapons
     //============================================================
-    //5.56x45mm
+    //GL Weapons
+	"CUP_glaunch_Mk13",
+	"CUP_glaunch_M79",
+
+	//5.56x45mm
     "arifle_Mk20_GL_plain_F",
     "arifle_TRG21_GL_F",
 
@@ -2479,7 +2486,7 @@ switch (true) do
     };
         case (_unitRole in ["sfsl","B_recon_TL_F"]) :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponGL + _itemWeaponSFSL + _itemWeaponCQB + _itemSpecial + _itemWeaponHighCapAmmo + _itemAmmoMAT + _itemWeaponARAmmo + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemPackMedium + _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponGL + ["CUP_glaunch_M32"] + _itemWeaponSFSL + _itemWeaponCQB + _itemSpecial + _itemWeaponHighCapAmmo + _itemAmmoMAT + _itemWeaponARAmmo + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemPackMedium + _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 
         player setUnitTrait ["Medic", true];
     };
