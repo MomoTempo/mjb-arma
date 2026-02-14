@@ -1949,6 +1949,14 @@ private _itemWeaponAR =
     "CUP_lmg_minimi_railed",
     "CUP_arifle_L86A2",
     "CUP_arifle_Galil_556_black",
+    "CUP_lmg_m249_SQuantoon",
+    "CUP_lmg_m249_pip1",
+    "CUP_lmg_m249_pip2",
+    "CUP_lmg_m249_pip3",
+    "CUP_lmg_m249_pip4",
+    "CUP_lmg_M249_E1",
+    "CUP_lmg_M249_E2",
+    "CUP_lmg_m249_para",
 
     "rhs_weap_m249_pip_ris",
     "rhs_weap_m249_pip_L_para",
@@ -1978,17 +1986,17 @@ private _itemWeaponAR =
     //============================================================
     //7.62x51mm
     //============================================================
-    "CUP_lmg_M60E4",
-    "CUP_lmg_MG3_rail",
+    //"CUP_lmg_M60E4",
+    //"CUP_lmg_MG3_rail",
 
     //============================================================
     //7.62x54mm
     //============================================================
-    "CUP_lmg_Pecheneg_B50_vfg",
-    "CUP_lmg_Pecheneg_top_rail_B50_vfg",
+    //"CUP_lmg_Pecheneg_B50_vfg",
+    //"CUP_lmg_Pecheneg_top_rail_B50_vfg",
 
-    "rhs_weap_pkm",
-    "rhs_weap_pkp",
+    //"rhs_weap_pkm",
+    //"rhs_weap_pkp",
 
     //============================================================
     //LMG Accessories
