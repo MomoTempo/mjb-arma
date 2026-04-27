@@ -152,18 +152,26 @@ class CfgSoundCurves {
 	//*/
 
 	class jsrs_2025_vehicle_cars_volumecurve { 
-		points[] = {{0,1},{0.1,0.85},{0.1,0.75},{0.2,0.67},{0.3,0.62},{0.4,0.55},{0.5,0.47},{0.6,0.37},{0.7,0.25},{0.8,0.15},{0.9,0.01},{1,0}}; 
-	}
+		points[] = {{0,1},{0.1,0.85},{0.1,0.8},{0.2,0.75},{0.3,0.7},{0.4,0.65},{0.5,0.6},{0.6,0.5},{0.7,0.4},{0.8,0.2},{0.9,0.01},{1,0}}; 
+	};
 
 	class jsrs_2025_vehicle_helicopters_volumecurve { 
-		points[] = {{0,1},{0.05,0.85},{0.1,0.75},{0.2,0.67},{0.3,0.62},{0.4,0.55},{0.5,0.47},{0.6,0.37},{0.7,0.25},{0.8,0.15},{0.9,0.01},{1,0}}; 
-	}
+		points[] = {{0,1},{0.05,0.85},{0.1,0.75},{0.2,0.67},{0.3,0.62},{0.4,0.55},{0.5,0.47},{0.6,0.37},{0.7,0.25},{0.8,0.15},{0.9,0.01},{1,0}};
+	};
 };
 
 class CfgVehicles {
 	//vehicle sounds
 	class Car;
 	class Car_F : Car { class Sounds; };
+
+	class CUP_SUV_Base : Car_F {
+		class Sounds : Sounds {
+			soundSetsExt[] = {"jsrs_2025_car_01_engine_ext_idle_soundset","jsrs_2025_car_01_engine_ext_drive_soundset","jsrs_2025_base_cars_engine_rev_petrol_soundset","jsrs_2025_car_01_engine_evr_soundset","jsrs_2025_car_01_engine_ext_release_soundset","jsrs_2025_car_01_engine_ext_distance_soundset","jsrs_2025_tires_asphalt_slow_ext_soundset","jsrs_2025_tires_asphalt_fast_ext_soundset","jsrs_2025_tires_asphalt_fast_far_soundset","jsrs_2025_tires_offroad_slow_ext_soundset","jsrs_2025_tires_offroad_fast_ext_soundset","jsrs_2025_tires_grass_ext_soundset","jsrs_2025_base_cars_engine_ext_turbo_soundset","jsrs_2025_base_cars_rattle_ext_soundset","jsrs_2025_base_cars_stress_ext_soundset","hatchback_01_rain_ext_soundset","hatchback_01_tires_water_slow_ext_soundset","hatchback_01_tires_turn_hard_ext_soundset","hatchback_01_tires_turn_soft_ext_soundset","hatchback_01_tires_brake_hard_ext_soundset","hatchback_01_tires_brake_soft_ext_soundset"};
+			soundSetsInt[] = {"jsrs_2025_car_01_engine_int_idle_soundset","jsrs_2025_car_01_engine_int_drive_soundset","jsrs_2025_base_cars_engine_int_rev_petrol_soundset","jsrs_2025_car_01_engine_int_release_soundset","jsrs_2025_tires_asphalt_slow_int_soundset","jsrs_2025_tires_asphalt_fast_int_soundset","jsrs_2025_tires_offroad_slow_int_soundset","jsrs_2025_tires_offroad_fast_int_soundset","jsrs_2025_tires_grass_int_soundset","jsrs_2025_wheeled_driving_noises_int_car_1_soundset","jsrs_2025_wheeled_offroad_driving_noises_int_car_1_soundset","jsrs_2025_base_cars_engine_int_turbo_soundset","jsrs_2025_base_cars_rattle_int_soundset","jsrs_2025_base_cars_stress_int_soundset","jsrs_2025_base_cars_rain_int_soundset","hatchback_01_tires_water_slow_int_soundset","hatchback_01_tires_turn_hard_int_soundset","hatchback_01_tires_turn_soft_int_soundset","hatchback_01_tires_brake_hard_int_soundset","hatchback_01_tires_brake_soft_int_soundset"};
+		};
+	};
+
 	class Wheeled_APC_F : Car_F {
 		class Sounds : Sounds {
 			soundsetsext[] = {"jsrs_2025_apc_w_02_engine_ext_idle_soundset","jsrs_2025_apc_w_02_engine_ext_drive_soundset","jsrs_2025_base_apcs_engine_rev_old_soundset","jsrs_2025_apc_w_02_engine_evr_soundset","jsrs_2025_apc_w_02_engine_ext_release_soundset","jsrs_2025_apc_w_02_engine_ext_distance_soundset","jsrs_2025_tires_asphalt_slow_ext_soundset","jsrs_2025_tires_asphalt_fast_ext_soundset","jsrs_2025_tires_asphalt_fast_far_soundset","jsrs_2025_tires_offroad_slow_ext_soundset","jsrs_2025_tires_offroad_fast_ext_soundset","jsrs_2025_tires_grass_ext_soundset","jsrs_2025_base_apcs_rattle_ext_soundset","jsrs_2025_base_apcs_stress_ext_soundset","truck_01_rain_ext_soundset","truck_01_tires_water_fast_ext_soundset","truck_01_tires_water_slow_ext_soundset","truck_01_tires_turn_hard_ext_soundset","truck_01_tires_turn_soft_ext_soundset","truck_01_tires_brake_hard_ext_soundset","truck_01_tires_brake_soft_ext_soundset"};
