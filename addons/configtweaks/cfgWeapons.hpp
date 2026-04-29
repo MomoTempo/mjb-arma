@@ -352,6 +352,12 @@ class CfgWeapons {
     swayCoef = 0.02; // default 0.34
   };
 
+
+  // Add 556 to Grot
+  class arifle_MSBS65_base_F : Rifle_Base_F {
+    magazineWell[] += {"STANAG_556x45","CBA_556x45_STANAG","CBA_556x45_STANAG_L"};
+  };
+
   class Throw : GrenadeLauncher {
 	class ThrowMuzzle;
     muzzles[] += {"mjb_SmokeShellLightBlueMuzzle","mjb_SmokeShellPinkMuzzle"};
@@ -365,9 +371,129 @@ class CfgWeapons {
 	};
   };
 
-  // Add 556 to Grot
-  class arifle_MSBS65_base_F : Rifle_Base_F {
-    magazineWell[] += {"STANAG_556x45","CBA_556x45_STANAG","CBA_556x45_STANAG_L"};
+  class UGL_F : GrenadeLauncher {
+	aiDispersionCoefX = 3;
+	aiDispersionCoefY = 8;
+	aiRateOfFire = 30;
+	aiRateOfFireDispersion = 90;
+	aiRateOfFireDistance = 400;
+	class Single : Mode_SemiAuto {
+		aiDispersionCoefX = 3;
+		aiDispersionCoefY = 8;
+		aiRateOfFire = 30;
+		aiRateOfFireDispersion = 90;
+		aiRateOfFireDistance = 400;
+	};
+  };
+
+  class arifle_MX_Base_F;
+  class arifle_MX_GL_F : arifle_MX_Base_F {
+	class GL_3GL_F : UGL_F {
+		class Single : Single {
+			aiRateOfFire = 15;
+			aiRateOfFireDispersion = 5;
+			aiRateOfFireDistance = 400;
+		};
+	};
+  };
+
+  class arifle_MSBS65_GL_base_F : arifle_MSBS65_base_F {
+	class UGL : UGL_F {
+		class Single : Single {};
+	};
+  };
+  class arifle_AK12_base_F;
+  class arifle_AK12_GL_base_F : arifle_AK12_base_F {
+	class EGLM : UGL_F {
+		class Single : Single {};
+	};
+  };
+
+  class CUP_glaunch_Base : Rifle_Base_F {
+	aiDispersionCoefX = 6;
+	aiDispersionCoefY = 6;
+	aiRateOfFire = 15;
+	aiRateOfFireDispersion = 5;
+	aiRateOfFireDistance = 400;
+	class Single : Mode_SemiAuto {
+		aiDispersionCoefX = 6;
+		aiDispersionCoefY = 6;
+		aiRateOfFire = 15;
+		aiRateOfFireDispersion = 5;
+		aiRateOfFireDistance = 400;
+	};
+  };
+  /*class CUP_glaunch_6G30 : CUP_glaunch_Base {
+	aiDispersionCoefX = 6;
+	aiDispersionCoefY = 6;
+	aiRateOfFire = 15;
+	aiRateOfFireDispersion = 5;
+	aiRateOfFireDistance = 400;
+  };
+  class CUP_glaunch_M32 : CUP_glaunch_Base {
+	aiDispersionCoefX = 6;
+	aiDispersionCoefY = 6;
+	aiRateOfFire = 15;
+	aiRateOfFireDispersion = 5;
+	aiRateOfFireDistance = 400;
+  };*/
+  class CUP_glaunch_M79 : CUP_glaunch_Base {
+	aiDispersionCoefX = 6;
+	aiDispersionCoefY = 6;
+	aiRateOfFire = 30;
+	aiRateOfFireDispersion = 90;
+	aiRateOfFireDistance = 400;
+	class Single : Single {
+		aiDispersionCoefX = 6;
+		aiDispersionCoefY = 6;
+		aiRateOfFire = 30;
+		aiRateOfFireDispersion = 90;
+		aiRateOfFireDistance = 400;
+	};
+  };
+  class CUP_glaunch_Mk13 : CUP_glaunch_Base {
+	aiDispersionCoefX = 3;
+	aiDispersionCoefY = 8;
+	aiRateOfFire = 30;
+	aiRateOfFireDispersion = 90;
+	aiRateOfFireDistance = 400;
+	class Single : Single {
+		aiDispersionCoefX = 3;
+		aiDispersionCoefY = 8;
+		aiRateOfFire = 30;
+		aiRateOfFireDispersion = 90;
+		aiRateOfFireDistance = 400;
+	};
+  };
+
+  class CUP_arifle_AK_Base;
+  class CUP_arifle_AK74M_GL : CUP_arifle_AK_Base {
+	class GP25Muzzle : UGL_F {
+		class Single : Single {};
+    };
+  };
+  class CUP_arifle_AKM;
+  class CUP_arifle_AKM_GL : CUP_arifle_AKM {
+	class GP25Muzzle : UGL_F {
+		class Single : Single {};
+    };
+  };
+  class CUP_arifle_xm29_ke_base;
+  class CUP_arifle_xm29_he_base : CUP_arifle_xm29_ke_base {
+	class XMHEMuzzle : Rifle_Base_F {
+		aiDispersionCoefX = 6;
+		aiDispersionCoefY = 6;
+		aiRateOfFire = 15;
+		aiRateOfFireDispersion = 5;
+		aiRateOfFireDistance = 600;
+		class Airburst : Mode_SemiAuto {
+			aiDispersionCoefX = 6;
+			aiDispersionCoefY = 6;
+			aiRateOfFire = 15;
+			aiRateOfFireDispersion = 5;
+			aiRateOfFireDistance = 600;
+		};
+    };
   };
 
   
