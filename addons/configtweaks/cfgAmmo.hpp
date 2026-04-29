@@ -252,6 +252,7 @@ class CfgAmmo
 	};
 	class CUP_R_OG7_AT : RocketBase {
 		airLock = 1;
+		allowAgainstInfantry = 1;
 		indirectHit = 30;
 		cost = 25;
 	};
@@ -289,17 +290,21 @@ class CfgAmmo
 	};
 	class CUP_R_RSHG2_HE : RocketBase {
 		aiAmmoUsageFlags = "64 + 128 + 256";
+		allowAgainstInfantry = 1;
 		indirecthit = 15;
+		indirecthitrange = 6;
 		airLock = 1;
 		cost = 25;
 	};
 	class CUP_R_SMAW_HEDP : RocketBase {
 		aiAmmoUsageFlags = "64 + 128 + 256 + 512";
+		allowAgainstInfantry = 1;
 		airLock = 1;
 		cost = 50;
 	};
 	class CUP_R_SMAW_HEDP_N : RocketBase {
 		aiAmmoUsageFlags = "64 + 128 + 256 + 512";
+		allowAgainstInfantry = 1;
 		airLock = 1;
 		cost = 50;
 	};
@@ -315,8 +320,10 @@ class CfgAmmo
 	};
 	class CUP_R_TBG7V_AT : RocketBase {
 		aiAmmoUsageFlags = "64 + 128";
+		allowAgainstInfantry = 1;
 		airLock = 1;
 		cost = 50;
+		fuseDistance = 20;
 	};
 
 	class CUP_P_M72A6_AT;
