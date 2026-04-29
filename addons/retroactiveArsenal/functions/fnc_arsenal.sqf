@@ -2461,15 +2461,18 @@ private _itemWeaponCQB =
     "rhs_mag_9x19mm_7n21_44",
 
     //Shotguns
+    "ACE_6Rnd_12Gauge_Pellets_No0_Buck",
+	"6Rnd_12Gauge_Slug",
+	"6Rnd_12Gauge_Pellets",
+
     "CUP_5Rnd_B_Saiga12_Buck_00",
     "CUP_5Rnd_B_Saiga12_Slug",
     "CUP_12Rnd_B_Saiga12_Buck_00",
     "CUP_12Rnd_B_Saiga12_Slug",
     "CUP_8Rnd_12Gauge_Pellets_No00_Buck",
     "CUP_8Rnd_12Gauge_Slug",
-    "ACE_6Rnd_12Gauge_Pellets_No0_Buck",
-	"6Rnd_12Gauge_Slug",
-	"6Rnd_12Gauge_Pellets",
+	"CUP_6Rnd_12Gauge_Pellets_No00_Buck",
+	"CUP_6Rnd_12Gauge_Slug",
 
     "rhsusf_8Rnd_00Buck",
     "rhsusf_5Rnd_00Buck",
