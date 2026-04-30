@@ -2693,6 +2693,7 @@ private _itemSniper =
 	//sling for defense
 	"tsp_sling",
 	"tsp_sling_1point",
+	"tsp_sling_3point",
 	"tsp_sling_lanyard",
 
     // "optic_AMS", // marksman dlc
@@ -2804,6 +2805,7 @@ private _itemWeaponGL =
 	"CUP_glaunch_M79",
 	"tsp_sling",
 	"tsp_sling_1point",
+	"tsp_sling_3point",
 	"tsp_sling_lanyard",
 
 	//5.56x45mm

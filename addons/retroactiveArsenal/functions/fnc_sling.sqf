@@ -8,11 +8,16 @@ if (_sling) then {
 	_unit setVariable [primaryWeapon _unit+"pref", _slingClass];  //-- Set preference
 	if (_drawPistol && !_knife && tsp_cba_animate_sling_style isEqualTo "adhd") then {[_unit, "tsp_animate_sling_check"] remoteExec ["playActionNow"]};   //-- Chamber check
 	if (_drawPistol && !_knife && tsp_cba_animate_sling_style isEqualTo "adhd") then {playSound3D ["A3\Sounds_F\weapons\Other\dry5-rifle.wss", _unit, false, getPosASL _unit, 5, 1, 10]; _time = _time + 0.1};
-	tsp_future pushBack [time + _time, [_unit], {params ["_unit"]; [_unit, "tsp_animate_sling_sling"] remoteExec ["playActionNow"]}];  //-- Play animation
+	(call compile (missionNameSpace getVariable ("tsp_cba_animate_"+_slingClass))) params ["_bone", "_position", "_rotation", "_animation"];
+	if (_bone isEqualType []) then { _rotation = _position; _position = _bone; _bone = 'spine3'; _animation = "tsp_animate_sling_sling";};
+	tsp_future pushBack [time + _time, [_unit, _animation], {params ["_unit", "_animation"]; [_unit, _animation] remoteExec ["playActionNow"]}];  //-- Play animation
+	tsp_future pushBack [time + _time + 0.25, [_unit, _slingClass, !_drawPistol && !_drawLauncher && !_unsling], {_this call tsp_fnc_animate_sling_rifle}];  //-- Moved out
+	_time = _time + 0.25;
+	/*tsp_future pushBack [time + _time, [_unit], {params ["_unit"]; [_unit, "tsp_animate_sling_sling"] remoteExec ["playActionNow"]}];  //-- Play animation
 	tsp_future pushBack [time + _time + 0.2, [_unit, _slingClass, !_drawPistol && {!_drawLauncher && {!_unsling}}], {
 		_this call tsp_fnc_animate_sling_rifle  //-- Moved out
 	}];
-	_time = _time + 0.2;
+	_time = _time + 0.2;*/
 };
 if (_holster) then {
 	[_unit, handgunWeapon _unit] remoteExec ["selectWeapon"];
@@ -40,7 +45,7 @@ if (_unsling) then {
 	if (currentWeapon _unit isEqualTo secondaryWeapon _unit && secondaryWeapon _unit isNotEqualTo "") then {[_unit, "tsp_animate_sling_launch"] remoteExec ["playActionNow"]; _time = 1};
 	if (currentWeapon _unit isEqualTo binocular _unit && binocular _unit isNotEqualTo "") then {[_unit, "tsp_animate_sling_unbino"] remoteExec ["playActionNow"]; _time = 0.7};
 	tsp_future pushBack [time + _time, [_unit, _sling, _holster, if (_unslingClass isEqualTo "auto") then {([_unit, false] call tsp_fnc_animate_sling_get)#0} else {_unslingClass}], {
-		params ["_unit", "_sling", "_holster", "_unslingClass"];
+		params ["_unit", "_sling", "_holster", "_unslingClass"]; if (isNil "_unslingClass") exitWith {};
 		(_unit getVariable [_unslingClass+"weapon", []]) params ["_holder", "_rifle"]; _rifle params ["_class", "_suppressor", "_pointer", "_optic", "_magazine1", "_magazine2", "_bipod"];
 		_unit addWeapon _class; {_unit addPrimaryWeaponItem _x} forEach [_suppressor, _pointer, _optic, _bipod];          //-- Add weapon and attachments
 		_weaponItems = (weaponsItems _unit select {_x#0 isEqualTo _class})#0; deleteVehicle _holder;                            //-- Get weapon items (including any magazines that were auto-loaded)
