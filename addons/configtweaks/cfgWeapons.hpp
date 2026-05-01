@@ -402,6 +402,7 @@ class CfgWeapons {
 		class Single : Single {};
 	};
   };
+
   class arifle_AK12_base_F;
   class arifle_AK12_GL_base_F : arifle_AK12_base_F {
 	class EGLM : UGL_F {
@@ -465,19 +466,18 @@ class CfgWeapons {
 		aiRateOfFireDistance = 400;
 	};
   };
-
-  class CUP_arifle_AK_Base;
-  class CUP_arifle_AK74M_GL : CUP_arifle_AK_Base {
+  class CUP_arifle_AK_Base : Rifle_Base_F {
 	class GP25Muzzle : UGL_F {
 		class Single : Single {};
     };
   };
+/*
   class CUP_arifle_AKM;
   class CUP_arifle_AKM_GL : CUP_arifle_AKM {
 	class GP25Muzzle : UGL_F {
 		class Single : Single {};
     };
-  };
+  };*/
   class CUP_arifle_xm29_ke_base;
   class CUP_arifle_xm29_he_base : CUP_arifle_xm29_ke_base {
 	class XMHEMuzzle : Rifle_Base_F {
