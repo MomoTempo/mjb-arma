@@ -29,6 +29,10 @@ class Extended_PreInit_EventHandlers
 	class ace_zeus {
 		init="call compileScript ['z\mjb\addons\arsenal\XEH_preInitZeus.sqf']";
 	};
+	class ace_nlaw
+	{
+		//init="call compileScript ['z\mjb\addons\arsenal\XEH_preInitNlaw.sqf']";
+	};
 	class ace_rangecard {
 		init="call compileScript ['z\mjb\addons\arsenal\XEH_preInitRangecard.sqf']";
 	};
@@ -44,6 +48,10 @@ class Extended_PreStart_EventHandlers
 {
 	class ace_zeus {
 		init="call compileScript ['z\mjb\addons\arsenal\XEH_preStartZeus.sqf']";
+	};
+	class ace_nlaw
+	{
+		//init="call compileScript ['z\mjb\addons\arsenal\XEH_preStartNlaw.sqf']";
 	};
 	class ace_rangecard {
 		init="call compileScript ['z\mjb\addons\arsenal\XEH_preStartRangecard.sqf']";
@@ -123,7 +131,7 @@ class CfgFactionClasses {
         side = 7;
     };
     class VCOM : MJB {
-        displayName = "VCOM";
+        displayName = "VCOM/TCL";
     };
     class MJB_SEB : MJB {
         displayName = "Seb's Briefing Table";
@@ -279,7 +287,7 @@ class CfgVehicles
 	class mjb_moduleVcom : mjb_moduleBase {
         category = "VCOM";
         curatorCanAttach = 1;
-        displayName = "Change VCOM Settings (Unit/Vehicle/Ground for Global)";
+        displayName = "Change VCOM/TCL Settings (Unit/Vehicle/Ground for Global)";
 		function = "mjb_arsenal_fnc_moduleVCOM";
 		icon = "\A3\ui_f\data\GUI\Cfg\Hints\Tactical_view_ca.paa";
 	};
