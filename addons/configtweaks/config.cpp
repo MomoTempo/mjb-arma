@@ -18,7 +18,8 @@ class CfgPatches {
             "CUP_WheeledVehicles_LoadOrder",
 			"PMC_Vest",
 			"ace_recoil",
-			"ace_laserpointer"
+			"ace_laserpointer",
+			"asdg_jointmuzzles"
         };
     };
 };
@@ -132,4 +133,5 @@ class CfgUnitInsignia {
 	};
 };
 
+#include "muzzleSlots.hpp" // Enable muzzle devices on different weapons
 #include "CfgWeapons.hpp" // AIDispersion, Weapon, Greenmag items, Accessory, Helmet, and Vest tweaks

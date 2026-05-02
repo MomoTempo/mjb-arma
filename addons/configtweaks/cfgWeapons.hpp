@@ -10,6 +10,18 @@ class CfgWeapons {
   class GrenadeLauncher : Default {opticsZoomInit = 0.66; opticsZoomMax = 1.5; opticsZoomMin = 0.33;};
   class Put : Default {opticsZoomInit = 0.66; opticsZoomMax = 1.5; opticsZoomMin = 0.33;};*/
 
+	// Muzzle flashes
+	class Zasleh2;
+	class Zasleh1 : Zasleh2 {
+		model = "A3\weapons_f\data\zasleh1_proxy.p3d";
+	};
+	class ZaslehPilot : Zasleh2 {
+		model = "A3\weapons_f\data\zasleh1_pilot_proxy.p3d";
+	};
+	class Zasleh2Pilot : Zasleh2 {
+		model = "A3\weapons_f\data\zasleh2_pilot_proxy.p3d";
+	};
+
   class GrenadeLauncher;
 
     
@@ -200,8 +212,9 @@ class CfgWeapons {
         ace_overpressure_backblast = 1;
 		ace_overpressure_offset = 1.25;
 	};
-  
-  class Rifle_Base_F;
+  class Rifle;
+  class Rifle_Base_F : Rifle { class WeaponSlotsInfo; };
+  class Rifle_Short_Base_F : Rifle_Base_F { class WeaponSlotsInfo; };
 
   // CTAR/QBZ+GL rifle modes fix
   class arifle_CTAR_base_F : Rifle_Base_F {
@@ -245,6 +258,22 @@ class CfgWeapons {
   };
   class CUP_arifle_Galil_SAR_black : CUP_arifle_GALIL_BASE {
     recoil = "CUP_M4A1_recoil";
+  };
+
+  // muzzle slots
+  class CUP_smg_MP7 : Rifle_Short_Base_F {
+    class WeaponSlotsInfo : WeaponSlotsInfo {
+		class MuzzleSlot : asdg_MuzzleSlot_46 {
+			delete compatibleItems;
+		};
+	};
+  };
+  class CUP_smg_P90_BASE : Rifle_Base_F {
+    class WeaponSlotsInfo : WeaponSlotsInfo {
+		class MuzzleSlot : MuzzleSlot_57 {
+			delete compatibleItems;
+		};
+	};
   };
 
   class Pistol_Base_F;
@@ -498,6 +527,16 @@ class CfgWeapons {
 
   
   class ItemCore;
+
+  // FH speed fix
+  class InventoryMuzzleItem_Base_F;
+  class CUP_acc_sffh : ItemCore {
+		class ItemInfo : InventoryMuzzleItem_Base_F {
+			class MagazineCoef {
+				initSpeed = 1.0;
+			};
+		};
+  };
 
 #include "CfgWeapons_flashlights.hpp" // needs ItemCore
 
