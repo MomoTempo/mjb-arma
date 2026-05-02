@@ -1,9 +1,7 @@
 //RNG AI by Toksa
 _unit=_this select 0;
 _firer=_this select 1;
-_disabled=_unit getvariable ["RNG_disabled",false];
-_off=missionnamespace getvariable ["RNG_off",false];
-if (isplayer _unit OR _disabled OR _off) exitwith {};
+if (isplayer _unit OR {(_unit getvariable ["RNG_disabled",false]) OR {(missionnamespace getvariable ["RNG_off",false])}}) exitwith {};
 _unit setvariable ["RNG_incombat",true];
 _unit setvariable ["RNG_cover",true];
 _exit=false;
@@ -21,16 +19,16 @@ _anims=RNG_ANIM_Run;
 _objects=[];
 _starttime=time;
 _cancrouch=true;
-if (!(unitPos _unit == "Auto")) then {_cancrouch=false;};
+if (!(unitPos _unit isEqualTo "Auto")) then {_cancrouch=false;};
 if (_cancrouch) then {
 _stance=selectrandom ["Up","Crouch","Down"];
-if (!((unitpos _unit) == _stance)) then {
+if (!((unitpos _unit) isEqualTo _stance)) then {
 _unit playactionnow _stance;
 };
 	switch (true) do {
-	  case (_stance=="Up"): {_unit setunitpos "Up"};
-    case (_stance=="Crouch"): {_unit setunitpos "Middle"};
-	case (_stance=="Down"): {_unit setunitpos "Down"};
+	  case (_stance isEqualTo "Up"): {_unit setunitpos "Up"};
+    case (_stance isEqualTo "Crouch"): {_unit setunitpos "Middle"};
+	case (_stance isEqualTo "Down"): {_unit setunitpos "Down"};
 	};
 };
 _time=time + 4;
@@ -54,7 +52,7 @@ _unit playactionnow (_anims select 0);
 		_unit setvariable ["RNG_cooldown",(time + 3)];
 	};
 	_line=lineIntersectsSurfaces [[(aimpos _unit) select 0,(aimpos _unit) select 1,((aimpos _unit) select 2) - 0.5], getposASL _targetpos, _unit, objNull, true, 1,"FIRE"];
-if (!((count _line) == 0)) then {
+if (!((count _line) isEqualTo 0)) then {
 	_pos=(_line select 0) select 0; 
 };
 if (isNil "_pos" OR {(_pos isequalto [0,0,0])}) then {
@@ -67,7 +65,7 @@ if (isNil "_pos" OR {(_pos isequalto [0,0,0])}) then {
 };
 while {alive _unit} do {
 	if (time > _time) then {_exit=true};
-	if (_exit OR (lifestate _unit isEqualTo"INCAPACITATED") OR (vehicle _unit isNotEqualTo _unit) OR isplayer _unit OR (isplayer (_unit getvariable ["bis_fnc_moduleremotecontrol_owner",objNull]))) exitwith {
+	if (_exit OR {(lifestate _unit isEqualTo"INCAPACITATED") OR {(vehicle _unit isNotEqualTo _unit) OR {isplayer _unit OR {(isplayer (_unit getvariable ["bis_fnc_moduleremotecontrol_owner",objNull]))}}}}) exitwith {
 		[_unit,_cancrouch,_target] spawn {
 		_unit = _this select 0;
 		_cancrouch = _this select 1;
@@ -128,8 +126,14 @@ if (!isNil "_pos" && {((_unit distance2D _pos) < 100)}) then {
 		_unit setVelocity [0, 0, 0];
 	};
 	if ((time - _starttime) % 1 > 0.5) then {
-		if (("run" in animationstate _unit OR "evas" in animationstate _unit) && {((vectorMagnitude (velocityModelSpace _unit)) < 1)}) then {_unit playactionnow "stop";_unit setVelocity [0, 0, 0];};
+		if (("run" in animationstate _unit OR {"evas" in animationstate _unit}) && {((vectorMagnitude (velocityModelSpace _unit)) < 1)}) then {_unit playactionnow "stop";_unit setVelocity [0, 0, 0];};
 	};
 
 sleep 0.02;
+};
+if !(alive _unit) then {
+	_unit setvariable ["RNG_incombat",nil];
+	_unit setvariable ["RNG_cover",nil];
+	_unit setvariable ["RNG_cooldown",nil];
+	_unit setvariable ["RNG_active",nil];
 };
