@@ -275,6 +275,43 @@ class CfgWeapons {
 		};
 	};
   };
+  class CUP_arifle_ACR_BASE_68 : Rifle_Base_F {
+    class WeaponSlotsInfo : WeaponSlotsInfo {
+		class MuzzleSlot : CUP_ACR_MuzzleSlot {
+			class compatibleItems : compatibleItems {
+				ACE_muzzle_mzls_B = 1;
+			};
+		};
+	};
+  };
+  class CUP_Famas_Base : Rifle_Base_F {
+    class WeaponSlotsInfo : WeaponSlotsInfo {
+		class MuzzleSlot : asdg_MuzzleSlot_556 {
+			delete compatibleItems;
+		};
+	};
+  };
+  class CUP_arifle_SR3M_Vikhr : Rifle_Base_F {
+    class WeaponSlotsInfo : WeaponSlotsInfo {
+		class MuzzleSlot : asdg_MuzzleSlot_762R {
+			delete compatibleItems;
+		};
+	};
+  };
+  class CUP_srifle_M14 : Rifle_Base_F {
+    class WeaponSlotsInfo : WeaponSlotsInfo {
+		class MuzzleSlot : MuzzleSlot_762 {
+			delete compatibleItems;
+		};
+	};
+  };
+  class CUP_srifle_M14_DMR : Rifle_Base_F {
+    class WeaponSlotsInfo : WeaponSlotsInfo {
+		class MuzzleSlot : asdg_MuzzleSlot_762 {
+			delete compatibleItems;
+		};
+	};
+  };
 
   class Pistol_Base_F;
   class CUP_hgun_M17_Coyote : Pistol_Base_F {
