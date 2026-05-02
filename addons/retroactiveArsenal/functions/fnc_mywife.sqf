@@ -1,4 +1,4 @@
-params [['_wifes',['Beagle','Jamball'],[]]];
+params [['_wifes',['Beaglerush','Beagle','Jamball'],[]]];
 
 if !(canSuspend) exitWith {_this spawn mjb_arsenal_fnc_mywife};
 
