@@ -826,9 +826,15 @@ private _itemPackMedLight =
 
 private _itemPackMedium =
 [
-	"B_Carryall_cbr",
-    "B_Carryall_taiga_F",
+    "B_Carryall_blk",
     "B_Carryall_eaf_F",
+    "B_Carryall_green_F",
+    "B_Carryall_ocamo",
+    "B_Carryall_ghex_F",
+    "B_Carryall_taiga_F",
+    "B_Carryall_khk",
+    "B_Carryall_mcamo",
+    "B_Carryall_wdl_F",
     "B_Carryall_oli",
     "rhs_tortila_grey",
     "rhs_tortila_khaki",
