@@ -827,6 +827,7 @@ private _itemPackMedLight =
 private _itemPackMedium =
 [
     "B_Carryall_blk",
+	"B_Carryall_cbr",
     "B_Carryall_eaf_F",
     "B_Carryall_green_F",
     "B_Carryall_ocamo",

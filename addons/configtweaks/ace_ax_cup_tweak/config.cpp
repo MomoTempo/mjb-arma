@@ -9,7 +9,7 @@ class CfgPatches {
 		name = "ACE AX Cup tweak";
 		requiredAddons[]=
 		{
-			"aceax_compat_cup"
+			"aceax_compat_cup","aceax_acebi_compat"
 		};
 		skipWhenMissingDependencies = 1;
 	};
@@ -27,6 +27,13 @@ class XtdGearInfos {
 };
 
 class XtdGearModels {
+	class CfgVehicles {
+		class acebi_carryall {
+			class camo {
+				values[] += {"CBR"};
+			};
+		};
+	};
 	class CfgWeapons {
 		class cup_crye {
 			class camo {
