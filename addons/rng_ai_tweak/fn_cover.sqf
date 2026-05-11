@@ -63,29 +63,29 @@ if (isNil "_pos" OR {(_pos isequalto [0,0,0])}) then {
 			_backposright=lineIntersectsSurfaces [aimPos _unit,(AGLtoASL (_unit getrelpos [20,135])), _unit, objNull, true, 1,"FIRE"];
 			_pos = selectrandom [((_leftpos select 0) select 0),((_rightpos select 0) select 0),((_backpos select 0) select 0),((_backposright select 0) select 0),((_backposleft select 0) select 0)];	
 };
-while {alive _unit} do {
+while {alive _unit && {local _unit}} do {
 	if (time > _time) then {_exit=true};
-	if (_exit OR {(lifestate _unit isEqualTo"INCAPACITATED") OR {(vehicle _unit isNotEqualTo _unit) OR {isplayer _unit OR {(isplayer (_unit getvariable ["bis_fnc_moduleremotecontrol_owner",objNull]))}}}}) exitwith {
+	if (_exit OR {(lifestate _unit isEqualTo"INCAPACITATED") OR {!(isNull (objectParent _unit)) OR {isplayer _unit}}}) exitwith {
 		[_unit,_cancrouch,_target] spawn {
-		_unit = _this select 0;
-		_cancrouch = _this select 1;
-		_target = _this select 2;
-		_unit playactionnow "STOP";
-		dostop _unit;
-		_unit domove getpos _unit;
-		_unit enableai "PATH";
-		_unit enableai "MOVE";
-		_unit enableai "ANIM";
-		_unit enableai "FSM";
-		_unit enableai "COVER";
-		_unit dofollow leader _unit;
-		_unit enableai "AIMINGERROR";
-		if (_cancrouch) then {_unit setunitpos "Auto"};
-		_unit setvariable ["RNG_incombat",false];
-		_unit setvariable ["RNG_cover",false];
-		_unit setvariable ["RNG_cooldown",(time + 6)];
-		if (!isNull _target && {vehicle _target iskindof "Tank"}) then {
-			_unit setvariable ["RNG_cooldown",(time + 4)];
+			_unit = _this select 0;
+			_cancrouch = _this select 1;
+			_target = _this select 2;
+			_unit playactionnow "STOP";
+			dostop _unit;
+			_unit domove getpos _unit;
+			_unit enableai "PATH";
+			_unit enableai "MOVE";
+			_unit enableai "ANIM";
+			_unit enableai "FSM";
+			_unit enableai "COVER";
+			_unit dofollow leader _unit;
+			_unit enableai "AIMINGERROR";
+			if (_cancrouch) then {_unit setunitpos "Auto"};
+			_unit setvariable ["RNG_incombat",false];
+			_unit setvariable ["RNG_cover",false];
+			_unit setvariable ["RNG_cooldown",(time + 6)];
+			if (!isNull _target && {vehicle _target iskindof "Tank"}) then {
+				_unit setvariable ["RNG_cooldown",(time + 4)];
 			};
 		sleep 1;
 		};
@@ -110,16 +110,17 @@ while {alive _unit} do {
 };
 
 if (!isNil "_pos" && {((_unit distance2D _pos) < 100)}) then {
+	private _relDir = (_unit getreldir _pos);
 	switch (true) do {
     case ((_unit distance2D _pos)< 2.5): {_unit playactionnow "stop";_exit=true;};
-    case ((_unit getreldir _pos) < 67.5 && {(_unit getreldir _pos) > 22.5}): {_unit playactionnow (_anims select 0)};
-    case ((_unit getreldir _pos) < 342.5 && {(_unit getreldir _pos) > 297.5}): {_unit playactionnow (_anims select 1);};
-    case ((_unit getreldir _pos) < 22.5 OR (_unit getreldir _pos) > 342.5): {_unit playactionnow (_anims select 2);};
-    case ((_unit getreldir _pos) < 202.5 && {(_unit getreldir _pos) > 157.5}): {_unit playactionnow (_anims select 3);};
-    case ((_unit getreldir _pos) < 157.5 && {(_unit getreldir _pos) > 112.5}): {_unit playactionnow (_anims select 4);};
-    case ((_unit getreldir _pos) < 247.5 && {(_unit getreldir _pos) > 202.5}): {_unit playactionnow (_anims select 5);};
-    case ((_unit getreldir _pos) < 112.5 && {(_unit getreldir _pos) > 67.5}): {_unit playactionnow (_anims select 6);};
-    case ((_unit getreldir _pos) < 292.5 && {(_unit getreldir _pos) > 247.5}): {_unit playactionnow (_anims select 7);};
+    case (_relDir < 67.5 && {_relDir > 22.5}): {_unit playactionnow (_anims select 0)};
+    case (_relDir < 342.5 && {_relDir > 297.5}): {_unit playactionnow (_anims select 1);};
+    case (_relDir < 22.5 OR _relDir > 342.5): {_unit playactionnow (_anims select 2);};
+    case (_relDir < 202.5 && {_relDir > 157.5}): {_unit playactionnow (_anims select 3);};
+    case (_relDir < 157.5 && {_relDir > 112.5}): {_unit playactionnow (_anims select 4);};
+    case (_relDir < 247.5 && {_relDir > 202.5}): {_unit playactionnow (_anims select 5);};
+    case (_relDir < 112.5 && {_relDir > 67.5}): {_unit playactionnow (_anims select 6);};
+    case (_relDir < 292.5 && {_relDir > 247.5}): {_unit playactionnow (_anims select 7);};
 };
 	} else {
 		_unit playactionnow "stop";
