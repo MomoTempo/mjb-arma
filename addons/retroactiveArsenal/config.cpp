@@ -62,15 +62,20 @@ class Extended_PreStart_EventHandlers
 	};
 };
 
-#if __has_include("\x\CF_BAI\addons\main\script_component.hpp")
 class Extended_Init_EventHandlers {
+#if __has_include("\x\CF_BAI\addons\main\script_component.hpp")
     class CAManBase {
         class mjb_CF_BAI_zeusSuppression {
             init = "call mjb_arsenal_fnc_cf_bai_zeusInit";
         };
     };
-};
 #endif
+    class mjb_moduleLockDoors {
+        class mjb_arsenal {
+			init = "if ((synchronizedObjects _logic select {_x isKindOf 'EmptyDetector'}) isEqualTo []) then {_this setVariable ['BIS_fnc_initModules_disableAutoActivation', false, true];};";
+        };
+    };
+};
 /*
 class CfgWorlds {
 	class DefaultWorld { class WaterExPars; };
@@ -192,6 +197,9 @@ class CfgVehicles
     };
     class mjb_moduleLightsOutEMP : mjb_moduleBase {
         curatorCanAttach = 0;
+		is3DEN = 1;
+		isTriggerActivated = 1;
+        scope = 2;
         displayName = "Lights Out/EMP (delete undoes)";
         function = "mjb_arsenal_fnc_moduleLightsOutEMP";
         icon = "\A3\ui_f\data\igui\cfg\actions\beacons_off_ca.paa";
@@ -234,6 +242,9 @@ class CfgVehicles
 	};
 	class mjb_moduleAllowAIUncon : mjb_moduleBase {
         curatorCanAttach = 1;
+		is3DEN = 1;
+		isTriggerActivated = 0;
+        scope = 2;
         displayName = "Allow AI Unconscious";
 		function = "mjb_arsenal_fnc_moduleAllowAIUncon";
 		icon = "\A3\ui_f\data\igui\cfg\Revive\OverlayIconsGroup\u100_ca.paa";
@@ -258,6 +269,9 @@ class CfgVehicles
 	};
     class mjb_moduleLockDoors : mjb_moduleBase {
 		category = "MJB_Breach";
+		is3DEN = 1;
+		isTriggerActivated = 1;
+        scope = 2;
         curatorCanAttach = 0;
         displayName = "Lock Doors in Area";
         function = "mjb_arsenal_fnc_moduleLockDoors";
