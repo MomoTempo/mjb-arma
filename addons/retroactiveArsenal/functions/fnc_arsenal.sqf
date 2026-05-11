@@ -2119,7 +2119,13 @@ if (_tracer isEqualTo 'red') then {
         "CUP_50Rnd_570x28_Red_Tracer_P90_M",
 	    "CUP_40Rnd_46x30_MP7_Red_Tracer",
         "CUP_30Rnd_45ACP_Red_Tracer_M3A1_BLK_M",
-		"30Rnd_9x21_Mag_SMG_02_Tracer_Red"
+		"30Rnd_9x21_Mag_SMG_02_Tracer_Red",
+		"JCA_25Rnd_45ACP_UMP_Tracer_IR_Mag",
+		"JCA_25Rnd_45ACP_UMP_Tracer_IR_Sand_Mag",
+		"JCA_25Rnd_45ACP_UMP_Red_Mag",
+		"JCA_25Rnd_45ACP_UMP_Red_Sand_Mag",
+		"JCA_25Rnd_45ACP_UMP_Tracer_Red_Mag",
+		"JCA_25Rnd_45ACP_UMP_Tracer_Red_Sand_Mag"
 	];
 
 	_itemWeaponHighCapAmmo =
@@ -2286,6 +2292,12 @@ if (_tracer isEqualTo 'red') then {
         "CUP_40Rnd_46x30_MP7_Yellow_Tracer",
         "CUP_30Rnd_45ACP_Green_Tracer_M3A1_BLK_M",
 		"30Rnd_9x21_Mag_SMG_02_Tracer_Yellow"
+		"JCA_25Rnd_45ACP_UMP_Tracer_IR_Mag",
+		"JCA_25Rnd_45ACP_UMP_Tracer_IR_Sand_Mag",
+		"JCA_25Rnd_45ACP_UMP_Yellow_Mag",
+		"JCA_25Rnd_45ACP_UMP_Yellow_Sand_Mag",
+		"JCA_25Rnd_45ACP_UMP_Tracer_Yellow_Mag",
+		"JCA_25Rnd_45ACP_UMP_Tracer_Yellow_Sand_Mag"
 	];
 
 	_itemWeaponHighCapAmmo =
@@ -2429,6 +2441,16 @@ private _itemWeaponCQB =
 
     "CUP_smg_EVO",
 
+	"JCA_smg_UMP_black_F",
+	"JCA_smg_UMP_AFG_black_F",
+	"JCA_smg_UMP_VFG_black_F",
+	"JCA_smg_UMP_olive_F",
+	"JCA_smg_UMP_AFG_olive_F",
+	"JCA_smg_UMP_VFG_olive_F",
+	"JCA_smg_UMP_sand_F",
+	"JCA_smg_UMP_AFG_sand_F",
+	"JCA_smg_UMP_VFG_sand_F",
+
     "rhs_weap_pp2000",
     "rhsusf_weap_MP7A2",
 
@@ -2463,6 +2485,11 @@ private _itemWeaponCQB =
     "50Rnd_570x28_SMG_03",
     "CUP_30Rnd_45ACP_M3A1_BLK_M",
 	"CUP_30Rnd_9x19_EVO",
+
+	"JCA_25Rnd_45ACP_UMP_Mag",
+	"JCA_25Rnd_45ACP_UMP_Sand_Mag",
+	"JCA_25Rnd_45ACP_UMP_IR_Mag",
+	"JCA_25Rnd_45ACP_UMP_IR_Sand_Mag",
 
     "rhs_mag_9x19mm_7n21_20",
     "rhs_mag_9x19mm_7n21_44",
