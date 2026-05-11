@@ -116,7 +116,7 @@ if (_isCuratorPlaced) then {
 
 		}] remoteExec ["call", 0, _logic];
 	} else {
-		[[_logic,_radius,_terrain,_entity], { params ['_logic','_radius','_tera','_ent'];
+		[[_logic,_area,_terrain,_entity], { params ['_logic','_radius','_tera','_ent'];
 			private _objects = [];
 			if (_ent) then {
 				_objects append (8 allObjects 1 select {_x distance2d _logic < _radius});
