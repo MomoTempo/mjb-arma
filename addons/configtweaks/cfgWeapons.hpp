@@ -215,6 +215,7 @@ class CfgWeapons {
   class Rifle;
   class Rifle_Base_F : Rifle { class WeaponSlotsInfo; };
   class Rifle_Short_Base_F : Rifle_Base_F { class WeaponSlotsInfo; };
+  class Rifle_Long_Base_F : Rifle_Base_F { class WeaponSlotsInfo; };
 
   // CTAR/QBZ+GL rifle modes fix
   class arifle_CTAR_base_F : Rifle_Base_F {
@@ -251,10 +252,18 @@ class CfgWeapons {
   // Fix Galil recoil
   class CUP_arifle_GALIL_BASE : Rifle_Base_F {
     recoil = "CUP_L86_recoil";
+	class WeaponSlotsInfo : WeaponSlotsInfo {
+		class MuzzleSlot : asdg_MuzzleSlot_556 {
+		};
+	};
   };
   class CUP_arifle_Galil_black : CUP_arifle_GALIL_BASE {
 	descriptionShort = "Assault rifle<br/>Caliber: 7.62x51mm NATO";
     recoil = "recoil_ebr";
+	class WeaponSlotsInfo : WeaponSlotsInfo {
+		class MuzzleSlot : asdg_MuzzleSlot_762 {
+		};
+	};
   };
   class CUP_arifle_Galil_SAR_black : CUP_arifle_GALIL_BASE {
     recoil = "CUP_M4A1_recoil";
@@ -298,6 +307,27 @@ class CfgWeapons {
 		};
 	};
   };
+  class CUP_lmg_FNMAG : Rifle_Long_Base_F {
+    class WeaponSlotsInfo : WeaponSlotsInfo {
+		class MuzzleSlot : asdg_MuzzleSlot_762 {
+			delete compatibleItems;
+		};
+	};
+  };
+  class CUP_lmg_M240 : Rifle_Long_Base_F {
+    class WeaponSlotsInfo : WeaponSlotsInfo {
+		class MuzzleSlot : asdg_MuzzleSlot_762 {
+			delete compatibleItems;
+		};
+	};
+  };
+  class CUP_lmg_M240_B : CUP_lmg_M240 {
+    class WeaponSlotsInfo : WeaponSlotsInfo {
+		class MuzzleSlot : asdg_MuzzleSlot_762 {
+			delete compatibleItems;
+		};
+	};
+  };
   class CUP_srifle_M14 : Rifle_Base_F {
     class WeaponSlotsInfo : WeaponSlotsInfo {
 		class MuzzleSlot : MuzzleSlot_762 {
@@ -312,6 +342,61 @@ class CfgWeapons {
 		};
 	};
   };
+  // shotgun
+  class CUP_sgun_M1014_base : Rifle_Base_F {
+    class WeaponSlotsInfo : WeaponSlotsInfo {
+		class MuzzleSlot : asdg_MuzzleSlot_12G {
+			delete compatibleItems;
+		};
+	};
+  };
+  /*/ gun broke
+  */
+
+  /* // just randomly places muzzle flash
+  class CUP_M60E4_Base : Rifle_Base_F {
+    class WeaponSlotsInfo : WeaponSlotsInfo {
+		class MuzzleSlot : MuzzleSlot_762 {
+			delete compatibleItems;
+		};
+	};
+  };
+  class CUP_lmg_MG3 : Rifle_Long_Base_F {
+    class WeaponSlotsInfo : WeaponSlotsInfo {
+		class MuzzleSlot : MuzzleSlot_762R {
+			delete compatibleItems;
+		};
+	};
+  };
+  class CUP_lmg_UK59 : Rifle_Long_Base_F {
+    class WeaponSlotsInfo : WeaponSlotsInfo {
+		class MuzzleSlot : MuzzleSlot_762R {
+			delete compatibleItems;
+		};
+	};
+  };
+  class CUP_sgun_AA12 : Rifle_Base_F {
+    class WeaponSlotsInfo : WeaponSlotsInfo {
+		class MuzzleSlot : asdg_MuzzleSlot_12G {
+			delete compatibleItems;
+		};
+	};
+  };
+  class CUP_sgun_Saiga12K : Rifle_Base_F {
+    class WeaponSlotsInfo : WeaponSlotsInfo {
+		class MuzzleSlot : asdg_MuzzleSlot_12G {
+			delete compatibleItems;
+		};
+	};
+  };
+  class CUP_sgun_SPAS12 : Rifle_Base_F {
+    class WeaponSlotsInfo : WeaponSlotsInfo {
+		class MuzzleSlot : asdg_MuzzleSlot_12G {
+			delete compatibleItems;
+		};
+	};
+  };
+  */
 
   class Pistol_Base_F;
   class CUP_hgun_M17_Coyote : Pistol_Base_F {

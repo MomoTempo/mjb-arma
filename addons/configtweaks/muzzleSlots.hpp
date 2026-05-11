@@ -7,6 +7,11 @@ class MuzzleSlot_762 : MuzzleSlot {
 		CUP_muzzle_snds_M14 = 1;
 	};
 };
+class MuzzleSlot_762R : MuzzleSlot {
+	class compatibleItems {
+		CUP_muzzle_mfsup_flashhider_Sa58 = 1;
+	};
+};
 class MuzzleSlot_57 : MuzzleSlot {
 	class compatibleItems {
 		ACE_muzzle_mzls_L = 1;
@@ -92,6 +97,12 @@ class asdg_MuzzleSlot_9MM_SMG : asdg_MuzzleSlot {
 };*/
 
 class asdg_MuzzleSlot_45ACP_SMG;
+
+class asdg_MuzzleSlot_12G : asdg_MuzzleSlot {
+	class compatibleItems {
+		MCC_SUREFIRE_RBC = 1;
+	};
+};
 
 class CUP_ACR_MuzzleSlot : asdg_MuzzleSlot_762 {
 	class compatibleItems {
