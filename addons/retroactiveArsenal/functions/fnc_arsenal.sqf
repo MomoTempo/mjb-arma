@@ -2291,7 +2291,7 @@ if (_tracer isEqualTo 'red') then {
         "CUP_50Rnd_570x28_Yellow_Tracer_P90_M",
         "CUP_40Rnd_46x30_MP7_Yellow_Tracer",
         "CUP_30Rnd_45ACP_Green_Tracer_M3A1_BLK_M",
-		"30Rnd_9x21_Mag_SMG_02_Tracer_Yellow"
+		"30Rnd_9x21_Mag_SMG_02_Tracer_Yellow",
 		"JCA_25Rnd_45ACP_UMP_Tracer_IR_Mag",
 		"JCA_25Rnd_45ACP_UMP_Tracer_IR_Sand_Mag",
 		"JCA_25Rnd_45ACP_UMP_Yellow_Mag",
