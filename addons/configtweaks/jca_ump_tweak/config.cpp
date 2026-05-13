@@ -19,6 +19,7 @@ class CfgWeapons {
 	class Rifle_Short_Base_F;
 	class JCA_smg_UMP_base_F : Rifle_Short_Base_F {
 		discreteDistance[] = {50,100,200,300,400};
+		discreteDistanceInitIndex = 1;
 	};
 };
 

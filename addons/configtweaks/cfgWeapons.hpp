@@ -350,8 +350,6 @@ class CfgWeapons {
 		};
 	};
   };
-  /*/ gun broke
-  */
 
   /* // just randomly places muzzle flash
   class CUP_M60E4_Base : Rifle_Base_F {
@@ -397,6 +395,22 @@ class CfgWeapons {
 	};
   };
   */
+
+  // .45 50m Zeroing
+  class SMG_01_Base : Rifle_Short_Base_F {
+	discreteDistance[] = {50,100,200};
+	discreteDistanceInitIndex = 1;
+  };
+
+  class CUP_smg_M3A1 : Rifle_Base_F {
+	discreteDistance[] = {50,100,200};
+	discreteDistanceInitIndex = 1;
+  };
+
+  class CUP_Mac10_Base : Rifle_Base_F {
+	discreteDistance[] = {50,100};
+	discreteDistanceInitIndex = 1;
+  };
 
   class Pistol_Base_F;
   class CUP_hgun_M17_Coyote : Pistol_Base_F {
