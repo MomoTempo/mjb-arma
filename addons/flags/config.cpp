@@ -252,6 +252,26 @@ class CfgWeapons
 		hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\G_Armband_canada_CO.paa"};
 		picture = "\Armbands\Facewear\Data\UI\icon_Armband_red_ca.paa";
 	};
+	class G_Armband_NVG_pride_F : G_Armband_NVG_blk_F {
+		displayName = "Armband [Pride]";
+		hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\G_Armband_pride_CO.paa"};
+		picture = "\Armbands\Facewear\Data\UI\icon_Armband_red_ca.paa";
+	};
+	class G_Armband_NVG_pride_alt_F : G_Armband_NVG_blk_alt_F {
+		displayName = "Armband [Pride, alt]";
+		hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\G_Armband_pride_CO.paa"};
+		picture = "\Armbands\Facewear\Data\UI\icon_Armband_red_ca.paa";
+	};
+	class G_Armband_NVG_trans_F : G_Armband_NVG_blk_F {
+		displayName = "Armband [Trans]";
+		hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\G_Armband_trans_CO.paa"};
+		picture = "\Armbands\Facewear\Data\UI\icon_Armband_red_ca.paa";
+	};
+	class G_Armband_NVG_trans_alt_F : G_Armband_NVG_blk_alt_F {
+		displayName = "Armband [Trans, alt]";
+		hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\G_Armband_trans_CO.paa"};
+		picture = "\Armbands\Facewear\Data\UI\icon_Armband_red_ca.paa";
+	};
 #endif
 };
 
@@ -278,6 +298,26 @@ class CfgGlasses {
 		displayName = "Armband [Canada, alt]";
 		hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\G_Armband_canada_CO.paa"};
 		picture = "\Armbands\Facewear\Data\UI\icon_Armband_red_ca.paa";
+	};
+	class G_Armband_pride_F : G_Armband_blk_F {
+		displayName = "Armband [Pride]";
+		hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\G_Armband_pride_CO.paa"};
+		picture = "\Armbands\Facewear\Data\UI\icon_Armband_yel_ca.paa";
+	};
+	class G_Armband_pride_alt_F : G_Armband_blk_alt_F {
+		displayName = "Armband [Pride, alt]";
+		hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\G_Armband_pride_CO.paa"};
+		picture = "\Armbands\Facewear\Data\UI\icon_Armband_yel_ca.paa";
+	};
+	class G_Armband_trans_F : G_Armband_blk_F {
+		displayName = "Armband [Trans]";
+		hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\G_Armband_trans_CO.paa"};
+		picture = "\Armbands\Facewear\Data\UI\icon_Armband_pnk_ca.paa";
+	};
+	class G_Armband_trans_alt_F : G_Armband_blk_alt_F {
+		displayName = "Armband [Trans, alt]";
+		hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\G_Armband_trans_CO.paa"};
+		picture = "\Armbands\Facewear\Data\UI\icon_Armband_pnk_ca.paa";
 	};
 };
 #endif
