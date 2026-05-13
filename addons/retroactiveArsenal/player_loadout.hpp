@@ -278,7 +278,7 @@ class riflerespawn : r
 // RATS SF Respawn
 class sfrespawn : r {
 	displayName = "SF Rifle RAT";
-	attachment[] += {
+	silencer[] = {
 		"CUP_muzzle_snds_SCAR_L"
 	};
 	headgear[] = {
@@ -287,6 +287,14 @@ class sfrespawn : r {
 	goggles[] =
 	{
 		"CUP_G_ESS_BLK_Facewrap_Black"
+	};
+	magazines[] = {
+		LIST_12("CUP_30Rnd_556x45_Emag"),
+		LIST_2("tsp_flashbang_cts"),
+		LIST_2("SmokeShellBlue"),
+		LIST_3("greenmag_ammo_556x45_basic_60Rnd"),
+		"HandGrenade",
+		"CUP_12Rnd_45ACP_mk23"
 	};
 	vest[] = {
 		//"rhsusf_plateframe_rifleman"
@@ -850,7 +858,7 @@ class amrt : r
 class sfsl : sl
 {
 	displayName = "SF Team Leader";
-	attachment[] += {
+	silencer[] = {
 		"CUP_muzzle_snds_SCAR_L"
 	};
 	headgear[] = {
@@ -982,7 +990,7 @@ class sfmed : cls
 class sfmat : mat
 {
 	displayName = "SF Antitank trooper";
-	attachment[] += {
+	silencer[] = {
 		"CUP_muzzle_snds_SCAR_L"
 	};
 	headgear[] = {
@@ -1088,7 +1096,7 @@ class sfar : ar
 // RATS Special Forces Sharpshooter
 class sfdmr : spotter {
 	displayName = "SF Sharpshooter";
-	attachment[] += {
+	silencer[] = {
 		"CUP_muzzle_snds_SCAR_L"
 	};
 	headgear[] = {
@@ -1121,7 +1129,7 @@ class sfdmr : spotter {
 // RATS Special Forces Ammo Bearer
 class sfaar : aar {
 	displayName = "SF Ammo Bearer";
-	attachment[] += {
+	silencer[] = {
 		"CUP_muzzle_snds_SCAR_L"
 	};
 	headgear[] = {
@@ -1137,6 +1145,14 @@ class sfaar : aar {
 	};
 	backpack[] = {
 		"G2_Gunslinger"
+	};
+	magazines[] = {
+		LIST_12("CUP_30Rnd_556x45_Emag"),
+		LIST_2("tsp_flashbang_cts"),
+		LIST_2("SmokeShellBlue"),
+		LIST_3("greenmag_ammo_556x45_basic_60Rnd"),
+		"HandGrenade",
+		"CUP_12Rnd_45ACP_mk23"
 	};
 	sidearmWeapon[] = {
 		"CUP_hgun_Mk23"
