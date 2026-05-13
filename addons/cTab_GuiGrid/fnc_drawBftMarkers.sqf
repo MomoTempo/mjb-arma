@@ -65,7 +65,7 @@ if (GVAR(microDagrGroupBFT) || {_mode != 2}) then {
 				if (_mode == 1 && {_iconB isNotEqualTo "" && {_veh isNotEqualTo _playerVehicle}}) exitWith {
 					// Drawing on TAD && vehicle is an air contact
 					call {
-						if (_groupID isEqualTo "") exitWith {
+						if (_groupID isNotEqualTo "") exitWith {
 							// air contact is in our group
 							_ctrlScreen drawIcon [_iconB,cTabTADgroupColour,_pos,cTabAirContactSize,cTabAirContactSize,_dir,"",0,cTabTxtSize,"TahomaB","right"];
 							_ctrlScreen drawIcon ["\A3\ui_f\data\map\Markers\System\dummy_ca.paa",cTabTADgroupColour,_pos,0,0,0,_groupID,0,cTabAirContactGroupTxtSize * 0.8,"TahomaB","center"];
@@ -79,9 +79,9 @@ if (GVAR(microDagrGroupBFT) || {_mode != 2}) then {
 				};
 				// Draw on anything but TAD
 				call {
-					if (_veh != _playerVehicle_marker) exitWith {
+					if (_veh isNotEqualTo _playerVehicle_marker) exitWith {
 						// player is not sitting in this vehicle
-						if (_x select 1 isEqualTo "") then {
+						if (_x select 1 isNotEqualTo "") then {
 							_ctrlScreen drawIcon [_x select 1,cTabColorBlue,_pos,cTabIconSize,cTabIconSize,0,_text,0,cTabTxtSize,"TahomaB","right"];
 						};
 						if ( _veh isEqualTo _playerVehicle ) then { _mustDrawPlayer = false; };
