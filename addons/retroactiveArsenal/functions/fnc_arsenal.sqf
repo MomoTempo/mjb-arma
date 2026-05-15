@@ -1470,6 +1470,10 @@ private _itemWeaponRifle =
     "CUP_arifle_G36KA3_grip",
 
     "CUP_arifle_XM8_Railed",
+    "CUP_arifle_XM8_Carbine_Fish",
+    "CUP_arifle_XM8_Carbine_FG_Fish",
+    "CUP_arifle_XM8_Carbine_Rail_Fish",
+    "CUP_arifle_XM8_Carbine_FG_Rail_Fish",
 
     "CUP_arifle_ACR_blk_556",
     "CUP_arifle_ACR_snw_556",
@@ -1562,6 +1566,13 @@ private _itemWeaponRifle =
     "CUP_arifle_AKMN_railed",
     "CUP_arifle_AK74M_railed_afg_camo",
     "CUP_arifle_AK74M_railed_afg",
+    "CUP_arifle_AKMS_Early",
+    "CUP_arifle_AKMS",
+    "CUP_arifle_AKMS_top_rail",
+    "CUP_arifle_AK47",
+    "CUP_arifle_AK47_top_rail",
+    "CUP_arifle_AKS",
+    "CUP_arifle_AKS74_Early",
 
     "CUP_arifle_TYPE_56_2",
     "CUP_arifle_TYPE_56_2_top_rail",
@@ -2909,11 +2920,17 @@ private _itemWeaponGL =
     "rhs_weap_ak74m_gp25",
 
     //7.62x39mm
-    "CUP_arifle_AKM_GL",
-    "CUP_arifle_AKM_GL_top_rail",
     "CUP_arifle_OTS14_GROZA_762_GL",
     "CUP_arifle_Sa58RIS2_gl",
 
+    "CUP_arifle_AKM_GL",
+    "CUP_arifle_AKM_GL_top_rail",
+    "CUP_arifle_AKMS_GL_Early",
+    "CUP_arifle_AKMS_GL",
+    "CUP_arifle_AKMS_GL_top_rail",
+    "CUP_arifle_AK47_GL",
+    "CUP_arifle_AK47_GL_top_rail",
+    "CUP_arifle_AKS74_GL_Early",
 	"CUP_arifle_AK103_GL",
 	"CUP_arifle_AK103_GL_top_rail",
 	"CUCUP_arifle_AK103_GL_railed",
@@ -3161,17 +3178,18 @@ private _itemWeaponMMG =
 
     "Tier1_MK48_Mod1",
 
+    //scopes
     "cup_optic_hensoldtzo",
     "cup_optic_acog2",
 	"CUP_optic_ACOG_TA648_308_Black",
+    "CUP_optic_ElcanM145",
 
     "rhsusf_acc_su230",
     "rhsusf_acc_su230_mrds",
     "rhsusf_acc_su230a",
     "rhsusf_acc_su230a_mrds",
 
-    "Tier1_Mk48Mod1_LA5_M600V_Black_FL",
-
+    //tripods
     "dzn_mg_tripod_universal",
     "dzn_mg_tripod_m122a1_m60mount",
     "dzn_mg_tripod_m122a1_m240mount",
@@ -3412,6 +3430,7 @@ private _itemTankCrew =
 [
     //"diw_armor_plates_main_plate",
     "greenmag_item_speedloader",
+    "CUP_U_B_GER_Fleck_Overalls_Tank",
     "CUP_V_PMC_CIRAS_Black_Veh",
     "CUP_V_PMC_CIRAS_Khaki_Veh",
     "CUP_V_PMC_CIRAS_Coyote_Veh",
