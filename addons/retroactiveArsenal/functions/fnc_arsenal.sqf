@@ -75,10 +75,10 @@
     MOMO, Bennay, Alien:
         the following weapon categories were added in August 2026 for SF Experimentation:
             Listed here for ease of rollback or pruning.
-                _itemSFWeaponGL
-                _itemSFWeaponMG
-                _itemSFWeaponRifle
-                _itemSFWeaponDMR
+                _itemWeaponSFGL
+                _itemWeaponSFMG
+                _itemWeaponSFRifle
+                _itemWeaponSFSharpshooter
 
     * Arguments:
       * 0: Apply to JIPs, players coming in after will use these parameters to generate
@@ -1863,7 +1863,8 @@ private _itemWeaponPistol =
 	"greenmag_ammo_570x28_basic_30Rnd",
 
     //Attachments
-    "optic_mrd_black",
+    "optic_MRD",
+    "optic_MRD_black",
     "CUP_acc_CZ_M3X",
     "cup_acc_glock17_flashlight",
     "tier1_x300u"
@@ -2691,18 +2692,6 @@ private ['_itemWeaponTracerAmmo','_itemWeaponHighCapAmmo','_itemWeaponARAmmo','_
 if (_tracer isEqualTo 'red') then {
 	_itemWeaponTracerAmmo =
 	[
-		//============================================================
-        //6.8 Ammo for _itemSFWeaponRifle
-        //============================================================
-        "CUP_30Rnd_680x43_Stanag_Tracer_Red",
-
-		//============================================================
-        //6.8 Ammo for _itemSFWeaponRifle
-        //============================================================
-        "30Rnd_65x39_caseless_mag_Tracer",
-        "30Rnd_65x39_caseless_khaki_mag_Tracer",
-        "30Rnd_65x39_caseless_black_mag_Tracer",
-       
         //============================================================
 		//5.56x45mm
 		//============================================================
@@ -2768,6 +2757,28 @@ if (_tracer isEqualTo 'red') then {
 		"JCA_25Rnd_45ACP_UMP_Tracer_Red_Sand_Mag"
 	];
 
+    _itemWeaponSFRifle =
+    [
+        //============================================================
+        //.277 Fury Ammo
+        //============================================================
+        "KAR_20Rnd_Fury_RT",
+        "KAR_20Rnd_Fury_RT_blk",
+        
+        //============================================================
+        //6.8 Ammo
+        //============================================================
+        "CUP_30Rnd_680x43_Stanag_Tracer_Red",
+
+		//============================================================
+        //6.8 Ammo
+        //============================================================
+        "30Rnd_65x39_caseless_mag_Tracer",
+        "30Rnd_65x39_caseless_khaki_mag_Tracer",
+        "30Rnd_65x39_caseless_black_mag_Tracer",
+       
+    ];
+
 	_itemWeaponHighCapAmmo =
 	[
 		//============================================================
@@ -2807,14 +2818,22 @@ if (_tracer isEqualTo 'red') then {
 		//============================================================
 	];
 
-    _itemWeaponSharpshooterAmmo = [
+    _itemWeaponSFMG =
+    [
+        //already in base _itemWeaponSFMG, remove duplicate if Green/Yellow Tracer is fixed
+        "KAR_100Rnd_Fury_RT_blk",
+        "KAR_100Rnd_Fury_RT"
+    ];
+
+    _itemWeaponSharpshooterAmmo = 
+    [
         //7.62x51mm
         "CUP_20Rnd_TE1_Red_Tracer_762x51_M110"
     ];
 
 	_itemWeaponARAmmo =
 	[
-		//============================================================
+        //============================================================
 		//5.56x45mm
 		//============================================================
 		//Boxes
@@ -2889,12 +2908,6 @@ if (_tracer isEqualTo 'red') then {
 // yellow trace
 	_itemWeaponTracerAmmo =
 	[
-		//============================================================
-        //6.8 Ammo for _itemSFWeaponRifle
-        //============================================================
-        "CUP_30Rnd_680x43_Stanag_Tracer_Yellow", //Yellow
-        "CUP_30Rnd_680x43_Stanag_Tracer_Green", //Green Tracer
-        
         //============================================================
 		//5.56x45mm
 		//============================================================
@@ -2958,15 +2971,37 @@ if (_tracer isEqualTo 'red') then {
 		"JCA_25Rnd_45ACP_UMP_Tracer_Yellow_Sand_Mag"
 	];
 
-	_itemWeaponHighCapAmmo =
-	[
-		//============================================================
-        //6.5 2035 NATO for _itemSFWeaponMG and _itemSFWeaponRifle
+    _itemWeaponSFRifle =
+    [
+        //============================================================
+        //.277 Fury Ammo uncomment if fixed
+        //DELETE RED TRACER AMMO BELOW IF GREEN/YELLOW FIXED
+        //============================================================		
+        "KAR_100Rnd_Fury_RT_blk",
+        "KAR_100Rnd_Fury_RT",
+        //non-working .277 fury ammo, mag fed
+        //"KAR_20Rnd_Fury_GT_blk",
+        //"KAR_20Rnd_Fury_YT_blk",
+        //"KAR_20Rnd_Fury_GT",
+        //"KAR_20Rnd_Fury_YT",
+
+        //============================================================
+        //6.8 Ammo
+        //============================================================
+        "CUP_30Rnd_680x43_Stanag_Tracer_Yellow", //Yellow
+        "CUP_30Rnd_680x43_Stanag_Tracer_Green", //Green Tracer
+
+        //============================================================
+        //6.5 2035 NATO
         //============================================================
         "100Rnd_65x39_caseless_mag_Tracer",
         "100Rnd_65x39_caseless_khaki_mag_tracer",
-        "100Rnd_65x39_caseless_black_mag_tracer",
+        "100Rnd_65x39_caseless_black_mag_tracer"
+    ];
 
+
+	_itemWeaponHighCapAmmo =
+	[
         //============================================================
 		//5.56x45mm
 		//============================================================
@@ -3010,9 +3045,25 @@ if (_tracer isEqualTo 'red') then {
 		"ace_10rnd_762x54_tracer_mag"
     ];
 
+    _itemWeaponSFMG
+    [
+        //============================================================
+        //.277 Ammo for _itemWeaponSFMG
+        //DELETE RED TRACER IF GREEN/YELLOW FIXED
+        //============================================================		
+        "KAR_100Rnd_Fury_RT_blk",
+        "KAR_100Rnd_Fury_RT"
+        
+        //non-working .277 fury ammo, belt fed
+        //"KAR_100Rnd_Fury_YT_blk",
+        //"KAR_100Rnd_Fury_GT_blk",
+        //"KAR_100Rnd_Fury_GT",
+        //"KAR_100Rnd_Fury_YT"
+    ];
+
 	_itemWeaponARAmmo =
 	[
-		//============================================================
+        //============================================================
 		//5.56x45mm
 		//============================================================
 		//Boxes
@@ -3520,9 +3571,19 @@ private _itemSniperAmmo = [
 private _itemWeaponGL =
 [
     //============================================================
+    //Secondary Weapons
+    //============================================================
+    "hkm320_pistol",
+    "hkm320khaki_pistol",
+    "hkm320tan_pistol",
+
+    //============================================================
     //Primary Weapons
     //============================================================
     //Grenade Launchers and Slings
+    "hkm320",
+    "m320haki",
+    "m320tan",
 	"CUP_glaunch_Mk13",
 	"CUP_glaunch_M79",
 	"tsp_sling_1point",
@@ -3779,13 +3840,28 @@ private _itemAmmoLAT =
 
 private _itemWeaponMAT =
 [
+    //MAAWS that can't self rangefind
     // CUP MAAWS for NV capability
-    "CUP_launch_MAAWS",
-    "CUP_optic_MAAWS_Scope",
+    //"CUP_launch_MAAWS",
+    //"CUP_optic_MAAWS_Scope",
     
-    "launch_MRAWS_sand_rail_F",
-	"launch_MRAWS_green_rail_F",
-	"launch_MRAWS_olive_rail_F"
+    //"launch_MRAWS_sand_rail_F",
+	//"launch_MRAWS_green_rail_F",
+	//"launch_MRAWS_olive_rail_F",
+
+    //SMAW
+    "CUP_launch_Mk153Mod0_blk",
+    //SMAW Optic
+    "CUP_optic_SMAW_Scope",
+
+    //RPG-7
+    "CUP_launch_RPG7V",
+
+    //RPG-Optics
+    "CUP_optic_PGO7V",
+    "CUP_optic_PGO7V2",
+    "CUP_optic_PGO7V",
+    "CUP_optic_NSPU_RPG" //NV Capable
 ];
 
 private _itemWeaponSFMAT =
@@ -3804,12 +3880,27 @@ private _itemAmmoSFMAT =
 
 private _itemAmmoMAT =
 [
-    "CUP_MAAWS_HEDP_M",
-    "CUP_MAAWS_HEAT_M",
+    //MAAWS Ammo if it comes back to MAT
+    //"CUP_MAAWS_HEDP_M",
+    //"CUP_MAAWS_HEAT_M",
 
-    "MRAWS_HEAT_F",
-    "MRAWS_HEAT55_F",
-    "MRAWS_HE_F"
+    //"MRAWS_HEAT_F",
+    //"MRAWS_HEAT55_F",
+    //"MRAWS_HE_F",
+
+    //SMAW Ammo
+    "CUP_SMAW_HEDP_M",
+    "CUP_SMAW_HEAA_M",
+    "CUP_SMAW_NE_M",
+    "CUP_SMAW_Spotting",
+    
+    //RPG-7 Ammo
+    "CUP_OG7_M",
+    "CUP_PG7V_M",
+    "CUP_PG7VL_M",
+    "CUP_PG7VM_M",
+    "CUP_PG7VR_M",
+    "CUP_TBG7V_M"
 ];
 
 private _itemWeaponHAT =
@@ -3899,41 +3990,9 @@ private _itemWeaponMMG =
     "dzn_mg_tripod_m122a1_m240mount_rhs"
 ];
 
-private _itemWeaponSFMMG =
-[
-    "CUP_lmg_Mk48",
-    "CUP_lmg_M60",
-	"CUP_lmg_M240_B",
-	"CUP_lmg_M240",
-
-	"mjb_CUP_lmg_Pecheneg_top_rail_B50_vfg_93",
-	"mjb_CUP_lmg_M240_338",
-
-    "rhs_weap_m240G",
-    "rhs_weap_m240B",
-
-    "Tier1_MK48_Mod1",
-
-    //"cup_optic_hensoldtzo",
-    //"cup_optic_acog2",
-
-    "rhsusf_acc_su230",
-    "rhsusf_acc_su230_mrds",
-    "rhsusf_acc_su230a",
-    "rhsusf_acc_su230a_mrds",
-
-    "Tier1_Mk48Mod1_LA5_M600V_Black_FL",
-
-    "dzn_mg_tripod_universal",
-    "dzn_mg_tripod_m122a1_m60mount",
-    "dzn_mg_tripod_m122a1_m240mount",
-    "dzn_mg_tripod_m122a1_m249mount_rhs",
-    "dzn_mg_tripod_m122a1_m240mount_rhs"
-];
-
 private _itemWeaponMMGAmmo =
 [
-	"ace_150rnd_762x54_box_red",
+    "ace_150rnd_762x54_box_red",
 	"CUP_200Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M",
     "150Rnd_762x51_Box_Tracer",
 	"mjb_CUP_120Rnd_TE4_LRT4_IR_Tracer_762x51_Belt_M",
@@ -4058,7 +4117,7 @@ private _itemSF =
     "rhsusf_shemagh2_tan"
 ];
 
-private _itemSFWeaponGL =
+private _itemWeaponSFGL =
 [
     //6.5 rifle grenade launchers
     "arifle_MX_GL_F",
@@ -4075,8 +4134,43 @@ private _itemSFWeaponGL =
     "CUP_arifle_ACRC_EGLM_wdl_68"
 ];
 
-private _itemSFWeaponMG =
+private _itemWeaponSFMG =
 [
+    //.277 Fury
+    //mmg
+    "KAR_XM250",
+    "KAR_XM250_BLK",
+    
+    "CUP_lmg_Mk48",
+    "CUP_lmg_M60",
+	"CUP_lmg_M240_B",
+	"CUP_lmg_M240",
+
+	"mjb_CUP_lmg_Pecheneg_top_rail_B50_vfg_93",
+	"mjb_CUP_lmg_M240_338",
+
+    "rhs_weap_m240G",
+    "rhs_weap_m240B",
+
+    "Tier1_MK48_Mod1",
+
+    //4x magnification - removed for balance for now
+    //"cup_optic_hensoldtzo",
+    //"cup_optic_acog2",
+
+    "rhsusf_acc_su230",
+    "rhsusf_acc_su230_mrds",
+    "rhsusf_acc_su230a",
+    "rhsusf_acc_su230a_mrds",
+
+    "Tier1_Mk48Mod1_LA5_M600V_Black_FL",
+
+    "dzn_mg_tripod_universal",
+    "dzn_mg_tripod_m122a1_m60mount",
+    "dzn_mg_tripod_m122a1_m240mount",
+    "dzn_mg_tripod_m122a1_m249mount_rhs",
+    "dzn_mg_tripod_m122a1_m240mount_rhs"
+    
     //6.5 lmgs
     "arifle_MX_SW_Black_F",
     "arifle_MX_SW_F",
@@ -4088,8 +4182,17 @@ private _itemSFWeaponMG =
     "ace_100rnd_65x39_caseless_mag_tracer_dim" //IR DIM
 ];
 
-private _itemSFWeaponRifle =
+private _itemWeaponSFRifle =
 [
+    //.277 Fury
+    "KAR_XM7",
+    "KAR_XM7_BLK",
+    "KAR_XM7_G",
+    "KAR_XM7_BLK_G",
+    //.277 Fury ammo
+    "KAR_20Rnd_Fury",
+    "KAR_20Rnd_Fury_blk",
+
     //6.5 LICC
     "MCC_FN_LICC_IWS_BLK",
     "MCC_FN_LICC_IWS",
@@ -4189,7 +4292,9 @@ private _itemSFWeaponRifle =
     "ace_30rnd_65x39_caseless_mag_tracer_dim" //IR DIM version!
 ];
 
-private _itemSFWeaponDMR =
+
+
+private _itemWeaponSFSharpshooter =
 [
     //6 ARC DMR
     "MCC_LMT_MARSL_SPECWAR_6ARC_BLK_CTR",
@@ -4612,7 +4717,7 @@ if (_hasApex) then {
 	    "arifle_CTAR_hex_F"
     ];
 
-    _itemSFWeaponRifle append [
+    _itemWeaponSFRifle append [
         //6.5 rifles APEX DLC
         "arifle_MX_khk_F",
         "arifle_MXC_khk_F",
@@ -4625,7 +4730,7 @@ if (_hasApex) then {
         "arifle_CTAR_GL_hex_F"
     ];
     
-    _itemSFWeaponGL append [
+    _itemWeaponSFGL append [
         //6.5 rifle grenade launchers APEX DLC
         "arifle_MX_GL_khk_F"
     ];
@@ -4636,7 +4741,7 @@ if (_hasApex) then {
         "arifle_CTARS_hex_F"
     ];
 
-    _itemSFWeaponMG append [
+    _itemWeaponSFMG append [
         //6.5 LSWs APEX DLC
         "arifle_MX_SW_khk_F"
     ];
@@ -4713,7 +4818,7 @@ if (_hasContact) then {
         "arifle_MSBS65_Mark_sand_F"
     ];
 
-    _itemSFWeaponRifle append [
+    _itemWeaponSFRifle append [
         //6.5 Promet Mags for GROTS, Contact DLC
         "30Rnd_65x39_caseless_msbs_mag",
         "30Rnd_65x39_caseless_msbs_mag_Tracer"
@@ -4784,13 +4889,13 @@ if (!_enableCBRN) then {
 };
 
 if (_hasMarksmen) then {
-    _itemWeaponSFMMG append [
+    _itemWeaponSFMG append [
         "MMG_01_tan_F",
         "MMG_02_black_F",
         "MMG_02_sand_F"
     ];
 
-    _itemSFWeaponDMR append [
+    _itemWeaponSFSharpshooter append [
         //9.3 and .338 Marksman DLC Rifles
         //9.3
         "srifle_DMR_05_blk_F",
@@ -4934,38 +5039,38 @@ switch (true) do
     };
         case (_unitRole in ["sfsl","B_recon_TL_F"]) :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponGL + _itemWeaponSFSL + _itemWeaponCQB + _itemWeaponRifle + _itemWeaponCarbine + _itemBreacher + _itemSpecial + _itemWeaponHighCapAmmo + _itemAmmoMAT + _itemWeaponARAmmo + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemPackMedium + _itemSF + _tarkovuniforms + _itemSFScoutGhillies + _itemSFWeaponRifle + _itemSFWeaponGL)] call ace_arsenal_fnc_initBox;
+        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponGL + _itemWeaponSFSL + _itemWeaponCQB + _itemWeaponRifle + _itemWeaponCarbine + _itemBreacher + _itemSpecial + _itemWeaponHighCapAmmo + _itemAmmoMAT + _itemWeaponARAmmo + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemPackMedium + _itemSF + _tarkovuniforms + _itemSFScoutGhillies + _itemWeaponSFRifle + _itemWeaponSFGL)] call ace_arsenal_fnc_initBox;
 
         player setUnitTrait ["Medic", true];
     };
         case (_unitRole in ["sfmed","B_recon_medic_F"]) :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemAmmoMAT + _itemMedic + ["mjb_carryallplus_oucamo"] + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms + _itemSFScoutGhillies + _itemSFWeaponRifle)] call ace_arsenal_fnc_initBox;
+        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemAmmoMAT + _itemMedic + ["mjb_carryallplus_oucamo"] + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms + _itemSFScoutGhillies + _itemWeaponSFRifle)] call ace_arsenal_fnc_initBox;
 
         player setUnitTrait ["Medic", true];
         player setVariable ["ace_medical_medicClass", 2, true];
     };
         case (_unitRole in ["sfmat","B_recon_LAT_F"]) :
     {
-        [arsenal, ((_itemEquipment + _itemFacewear + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSFMAT + _itemAmmoSFMAT + _itemPackMedium + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms + _itemSFScoutGhillies + _itemSFWeaponRifle) - ["CUP_launch_FIM92Stinger"])] call ace_arsenal_fnc_initBox;
+        [arsenal, ((_itemEquipment + _itemFacewear + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSFMAT + _itemAmmoSFMAT + _itemPackMedium + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms + _itemSFScoutGhillies + _itemWeaponSFRifle) - ["CUP_launch_FIM92Stinger"])] call ace_arsenal_fnc_initBox;
 
         player setUnitTrait ["Medic", true];
     };
         case (_unitRole in ["sfar","B_Patrol_Soldier_MG_F","B_Recon_exp_F"]) :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponAR + _itemWeaponARAmmo + _itemWeaponSFAR + _itemWeaponHighCapAmmo + _itemAmmoMAT + _itemMod + _itemReflexSight + _itemWeaponPistol +_itemWeaponSFMMG + _itemWeaponMMGAmmo + _itemPackMedium + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms + _itemSFScoutGhillies + _itemSFWeaponMG)] call ace_arsenal_fnc_initBox;
+        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponAR + _itemWeaponARAmmo + _itemWeaponSFAR + _itemWeaponHighCapAmmo + _itemAmmoMAT + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemWeaponMMGAmmo + _itemPackMedium + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms + _itemSFScoutGhillies + _itemWeaponSFMG)] call ace_arsenal_fnc_initBox;
 
         player setUnitTrait ["Medic", true];
     };
         case (_unitRole in ["sfaar","B_recon_F"]) :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemAmmoMAT + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemWeaponMMGAmmo + _itemPackMedium + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms + _itemSFScoutGhillies + _itemSFWeaponRifle)] call ace_arsenal_fnc_initBox;
+        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemAmmoMAT + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemWeaponMMGAmmo + _itemPackMedium + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms + _itemSFScoutGhillies + _itemWeaponSFRifle)] call ace_arsenal_fnc_initBox;
 
         player setUnitTrait ["Medic", true];
     };
         case (_unitRole in ["sfdmr","B_recon_M_F"]) :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemSniper + _itemAmmoMAT + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemSF + _tarkovuniforms + _itemSFScoutGhillies + _itemSFWeaponRifle + _itemSFWeaponDMR)] call ace_arsenal_fnc_initBox; //+ _itemWeaponSniper
+        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemSniper + _itemAmmoMAT + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemSF + _tarkovuniforms + _itemSFScoutGhillies + _itemWeaponSFRifle + _itemWeaponSFSharpshooter)] call ace_arsenal_fnc_initBox; //+ _itemWeaponSniper
 
         player setUnitTrait ["Medic", true];
     };
@@ -5046,7 +5151,7 @@ switch (true) do
     };
         case (_unitRole in ["sfrespawn","B_Soldier_F"]) :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms + _itemSFScoutGhillies + _itemSFWeaponRifle)] call ace_arsenal_fnc_initBox;
+        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms + _itemSFScoutGhillies + _itemWeaponSFRifle)] call ace_arsenal_fnc_initBox;
 
         player setUnitTrait ["Medic", true];
     };
@@ -5056,7 +5161,7 @@ switch (true) do
     };
         case (_unitRole in ["sfbreacher","B_Soldier_F"]) :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponCQB + _itemWeaponRifle + _itemWeaponCarbine + _itemBreacher + _itemBreacherRoleEquipment + _itemSpecial + _itemWeaponHighCapAmmo + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemPackMedium + _itemSF + _tarkovuniforms + _itemSFScoutGhillies + _itemSFWeaponRifle)] call ace_arsenal_fnc_initBox;
+        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponCQB + _itemWeaponRifle + _itemWeaponCarbine + _itemBreacher + _itemBreacherRoleEquipment + _itemSpecial + _itemWeaponHighCapAmmo + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemPackMedium + _itemSF + _tarkovuniforms + _itemSFScoutGhillies + _itemWeaponSFRifle)] call ace_arsenal_fnc_initBox;
 
         player setUnitTrait ["Medic", true];
     };
