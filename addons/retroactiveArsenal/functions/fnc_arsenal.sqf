@@ -2231,6 +2231,32 @@ private _itemWeaponRifle =
 	// MCC 5.56, 5.45, 7.62x39
 	//============================================================
 	
+    "MCC_SUREFIRE_ICAR_556_BLK_CTR",
+    "MCC_SUREFIRE_ICAR_556_BLK_STR",
+    "MCC_SUREFIRE_ICAR_556_BLK_Bravo",
+    "MCC_SUREFIRE_ICAR_556_GRN_CTR",
+    "MCC_SUREFIRE_ICAR_556_GRN_STR",
+    "MCC_SUREFIRE_ICAR_556_GRN_Bravo",
+    "MCC_HK433_11_STD_BLK_556",
+    "MCC_HK433_11_HK_BLK_556",
+    "MCC_HK433_11_CTR_BLK_556",
+    "MCC_HK433_145_STD_BLK_556",
+    "MCC_HK433_145_HK_BLK_556",
+    "MCC_HK433_145_CTR_BLK_556",
+    "MCC_HK433_16_STD_BLK_556",
+    "MCC_HK433_16_HK_BLK_556",
+    "MCC_HK433_16_CTR_BLK_556",
+    "MCC_HK433_11_STD_FDE_556",
+    "MCC_HK433_145_STD_FDE_556",
+    "MCC_HK433_16_STD_FDE_556",
+    "MCC_HK433_11_HK_FDE_556",
+    "MCC_HK433_145_HK_FDE_556",
+    "MCC_HK433_16_HK_FDE_556",
+    "MCC_HK433_11_CTR_FDE_556",
+    "MCC_HK433_145_CTR_FDE_556",
+    "MCC_HK433_16_CTR_FDE_556",
+    "MCC_LMT_MARSL_NZDF",
+
     "MCC_LMT_MARSL_R20S_RAHE",
     "MCC_M4A1_556_BII_145_CTR",
     "MCC_M4A1_556_BII_145_Bravo",
@@ -4425,8 +4451,6 @@ private _itemWeaponSFRifle =
 ];
 _itemWeaponSFRifle append _itemWeaponSFRifleAmmo;
 
-
-
 private _itemWeaponSFSharpshooter =
 [
     //6 ARC DMR
@@ -4439,16 +4463,24 @@ private _itemWeaponSFSharpshooter =
     "MCC_LMT_MARSL_SPECWAR_6ARC_FDE_CTR",
     "MCC_LMT_MARSL_SPECWAR_6ARC_FDE_SLK",
     "MCC_LMT_MARSL_SPECWAR_6ARC_FDE_SOPMOD",
+    "MCC_SUREFIRE_ICAR_6ARC_BLK_CTR",
+    "MCC_SUREFIRE_ICAR_6ARC_BLK_STR",
+    "MCC_SUREFIRE_ICAR_6ARC_BLK_Bravo",
+    "MCC_SUREFIRE_ICAR_6ARC_GRN_CTR",
+    "MCC_SUREFIRE_ICAR_6ARC_GRN_STR",
+    "MCC_SUREFIRE_ICAR_6ARC_GRN_Bravo",
+    
     //6ARC Ammo
     "MCC_ICM_6ARC_20RD_ATIP",
     "MCC_ICM_6ARC_20RD_ADVAP",
     "MCC_ICM_6ARC_20RD_GPR",
+    "MCC_ICAR_6ARC_25RD_GPR",
+    "MCC_ICAR_FDE_6ARC_25RD_GPR",
     //6.5 creedmore ammo
     "ACE_30Rnd_65_Creedmor_mag",
     "ACE_30Rnd_65_Creedmor_msbs_mag",
     "ACE_30Rnd_65_Creedmor_khaki_mag",
     "ACE_30Rnd_65_Creedmor_black_mag"
-
 ];
 
 private _itemSFScoutGhillies =
