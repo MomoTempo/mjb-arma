@@ -9,12 +9,26 @@ class CfgPatches {
     name = "MCC sights tweaks";
 	requiredAddons[]=
         {	//"disable",
+			"MCC_ICAR", "MCC_LMT", // arc mags fix
             "MCC_RD",//weapons[] = {"MCC_MicroT2","MCC_MicroT2_Down","MCC_MicroT2_Up","MCC_EXPS3_BLK","MCC_EXPS3_BLK_Down","MCC_EXPS3_BLK_Up","MCC_EXPS3_FDE","MCC_EXPS3_FDE_Down","MCC_EXPS3_FDE_Up","MCC_Romeo9t_blk","MCC_Romeo9t_fde","MCC_Romeo9t_BLK_Down","MCC_Romeo9T_BLK_Up","MCC_Romeo9T_FDE_Down","MCC_Romeo9T_FDE_Up"};
             "MCC_LPVO",//weapons[] = {"MCC_Vortex_Elanor_Acro_BLK","MCC_Vortex_Elanor_Acro_FDE","MCC_Vortex_Elanor_Acro_TAN","MCC_Mark5_10_BLK","MCC_Mark5_10_FDE","MCC_Trijicon_VCOG_18","MCC_ZCO_10_BLK_DMR"};
             "MCC_ERD"//weapons[] = {"MCC_GBRS_T2_FDE","MCC_GBRS_T2_Mag_Down_FDE","MCC_GBRS_T2_Mag_Up_FDE","MCC_GBRS_T2_Mag_Up_BLK","MCC_GBRS_EXPS3_FDE","MCC_GBRS_EXPS3_Mag_Down_FDE","MCC_GBRS_EXPS3_Mag_Up_FDE","MCC_GBRS_EXPS3_Mag_Up_BLK","MCC_MicroT2_UnityX_BLK","MCC_MicroT2_UnityX_FDE","MCC_MicroT2_UnityX_BLK_Down","MCC_MicroT2_UnityX_BLK_Up","MCC_MicroT2_UnityX_FDE_Down","MCC_MicroT2_UnityX_FDE_Up","MCC_EXPS3_UnityX_BLK","MCC_EXPS3_UnityX_BLK_Down","MCC_EXPS3_UnityX_BLK_Up","MCC_EXPS3_UnityX_FDE","MCC_EXPS3_UnityX_FDE_Down","MCC_EXPS3_UnityX_FDE_Up"};
         };
     skipWhenMissingDependencies = 1;
   };
+};
+
+class CfgMagazines {
+
+	class MCC_ICAR_6ARC_25RD_GPR;
+	class MCC_ICAR_6ARC_25RD_ATIP : MCC_ICAR_6ARC_25RD_GPR {
+		displaynameshort = "A-TIP";
+	};
+
+    class MCC_ICM_6ARC_20RD_GPR;
+	class MCC_ICM_6ARC_20RD_ATIP : MCC_ICM_6ARC_20RD_GPR {
+		displaynameshort = "A-TIP";
+	};
 };
 
 class CfgWeapons {
@@ -154,4 +168,21 @@ class CfgWeapons {
 	MCC_UP(MCC_LCO_PRO_F2_UnityX_blk_Up,MCC_LCO_PRO_F2_UnityX_blk_Down);
 	MCC_UP(MCC_LCO_PRO_F2_UnityX_FDE_Up,MCC_LCO_PRO_F2_UnityX_FDE_Down);
 	MCC_UP(MCC_MicroT2_UnityX_DFDE_Up,MCC_MicroT2_UnityX_DFDE_Down);
+
+	class MCC_Spectr_G3_BLK : ItemCore {
+		class ItemInfo : InventoryOpticsItem_Base_F {
+			class OpticsModes {
+				class Optic1x { discreteDistance[] = {100}; discreteDistanceInitIndex = 0;};
+				class Snip { discreteDistance[] = {100}; discreteDistanceInitIndex = 0;};
+			};
+		};
+	};
+	class MCC_Spectr_G3_MPS_BLK : ItemCore {
+		class ItemInfo : InventoryOpticsItem_Base_F {
+			class OpticsModes {
+				class Optic1x { discreteDistance[] = {100}; discreteDistanceInitIndex = 0;};
+				class Snip { discreteDistance[] = {100}; discreteDistanceInitIndex = 0;};
+			};
+		};
+	};
 };

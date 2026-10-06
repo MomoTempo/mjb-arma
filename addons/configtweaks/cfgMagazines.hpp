@@ -573,6 +573,9 @@ class CfgMagazines
 	class CUP_64Rnd_Yellow_Tracer_9x19_Bizon_M : CA_Magazine {
 		mass = 20;
 	};
+	class CUP_30Rnd_9x39_SP5_VIKHR_M : CA_Magazine {
+		mass = 14;
+	};
 
 	class mjb_cup_64Rnd_46x30_Bizon_M : CUP_64Rnd_9x19_Bizon_M {
 		ammo = "CUP_B_46x30_Ball";

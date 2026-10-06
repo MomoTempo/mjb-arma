@@ -70,7 +70,7 @@ private _title = "MJB Arma";
     "CHECKBOX",
     ["Carry object local", "Shifts object to player when carrying for accurate rotation control."],
     [_title, "Player QoL"],
-    true,
+    false,
     true,
     { },
     true
